@@ -1,0 +1,19 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Environment files
+.venv/
+.env
+
+# Logs & outputs
+logs/
+outputs/
+*.log
+
+# Mac system files
+.DS_Store
