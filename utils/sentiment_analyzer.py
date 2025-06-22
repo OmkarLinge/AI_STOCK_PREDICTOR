@@ -1,19 +1,17 @@
-# utils/sentiment_analyzer.py
-
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from torch.nn.functional import softmax
 import torch
 
-# Load FinBERT model and tokenizer from HuggingFace
+# Load model once globally
 tokenizer = AutoTokenizer.from_pretrained("yiyanghkust/finbert-tone")
 model = AutoModelForSequenceClassification.from_pretrained("yiyanghkust/finbert-tone")
+model.eval()  # run in inference mode
 
 labels = {0: "Negative", 1: "Neutral", 2: "Positive"}
 
 def analyze_sentiment(text):
     """
-    Predict sentiment of a given financial news text using FinBERT.
-    Returns: label and score (confidence)
+    Analyze sentiment using FinBERT. Returns label and confidence.
     """
     try:
         inputs = tokenizer(text, return_tensors="pt", truncation=True)

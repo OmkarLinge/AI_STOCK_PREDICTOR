@@ -3,7 +3,7 @@
 import yfinance as yf
 import pandas as pd
 
-def fetch_stock_data(symbol, start_date="2015-01-01", end_date=None):
+def fetch_stock_data(symbol, start_date="2000-01-01", end_date=None):
     """
     Fetch historical OHLCV data for any stock or forex symbol.
     :param symbol: Ticker symbol like AAPL, RELIANCE.NS, BTC-USD

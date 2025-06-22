@@ -34,6 +34,6 @@ if news:
 
         print(f"{i}. 📰 {title}")
         print(f"   📝 Description: {description}")
-        print(f"   🧠 Sentiment: {sentiment} ({confidence * 100:.1f}% confidence)\n")
+        print(f"   🧠 Sentiment: {sentiment} ({round(confidence * 100, 2)}% confidence)\n")
 else:
     print("⚠️ No news found or error occurred.")
